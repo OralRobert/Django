@@ -1,0 +1,26 @@
+<h1>Employee form</h1>
+<form action="" method="post">
+    {%csrf_token%}
+    <tr>
+        <th>Name : <input type="text" name="myname"></th>
+        <br><br>
+    </tr>
+    <tr>
+        <th>Email : <input type="text" name="myemail"></th>
+        <br><br>
+    </tr>
+    <tr>
+        <th>contact : <input type="text" name="mycontact"></th>
+        <br><br>
+    </tr>
+    <tr>
+        <th>age : <input type="text" name="myage"></th>
+        <br><br>
+    </tr>
+    <tr>
+        <th>address : <input type="text" name="myaddress"></th>
+        <br><br>
+    </tr>
+    <input type="submit" value="save">
+    <input type="reset" value="reset">
+</form>
