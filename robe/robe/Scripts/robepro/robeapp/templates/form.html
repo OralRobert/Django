@@ -1,0 +1,13 @@
+<h1>YOUR FORM</h1>
+
+<form action="" method="post">
+    {%csrf_token%}
+    <table>
+        {{form.as_ul}}
+        <tr>
+            <td><input type="submit" value="save"></td>
+            <td><input type="reste" value="reset"></td>
+        </tr>
+    </table>
+
+</form>
