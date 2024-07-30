@@ -20,8 +20,7 @@ from .import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('income',v.income,name='add'),
+    path('incom',v.add_income,name='add'),
     path('inc_list',v.income_list,name='list1'),
-    path('delete/<int:iid>',v.delete),
-    path('edit/<int:iid>',v.edit),
+    path('income_search',v.inc_search,name='income_search'),
 ]

@@ -19,8 +19,8 @@ from django.urls import path
 from .import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('expense',v.expense,name='add1'),
+    path('expense',v.add_expense,name='add1'),
     path('exp_list',v.expense_list,name='elist'),
-    path('delete1/<int:eid>',v.delete1),
-    path('edit1/<int:eid>',v.edit1),
+    path('expense_search',v.exp_search,name='expense_search'),
+    path('ext/<str:ext2>',v.sort_by_type,name='ext1')
 ]   

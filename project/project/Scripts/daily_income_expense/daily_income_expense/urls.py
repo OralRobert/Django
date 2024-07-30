@@ -2,7 +2,7 @@
 URL configuration for daily_income_expense project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -19,7 +19,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(('account.urls','account'),namespace='account')),
-    path('',include(('income.urls','income'),namespace='income')),
-    path('',include(('expense.urls','expense'),namespace='expense')),
+    path('',include(('accountapp.urls','account'),namespace='accountapp')),
+    path('',include(('incomeapp.urls','income'),namespace='incomeapp')),
+    path('',include(('expenseapp.urls','expense'),namespace='expenseapp')),
 ]

@@ -1,13 +1,8 @@
+{%extends 'sidebar.html'%}
+{%block body%}
 <h1>Daily income expense project</h1>
+<h2 style="color: brown;">Welcome:{{user}}</h2>
+<h2 style="color: red;">Total Balance: {{bal}}</h2>
+{%endblock%}
 
-<h2><a href="">HOME</a></h2>
-<h2><a href="{%url 'account:reg'%}">Register</a></h2>
-<h2><a href="{%url 'income:add'%}">Add Income</a></h2>
-<h2><a href="{%url 'expense:add1'%}">Add Expense</a></h2>
-<h2><a href="{%url 'income:list1'%}">IncomeList</a></h2>
-<h2><a href="{%url 'expense:elist'%}">Expense List</a></h2>
-<h2><a href="">Login</a></h2>
-<h2><a href="">Logout</a></h2>
-<h2><a href="">Edit_profile</a></h2>
-<h2><a href="">About_us</a></h2>
 
