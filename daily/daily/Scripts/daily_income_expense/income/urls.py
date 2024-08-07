@@ -23,4 +23,5 @@ urlpatterns = [
     path('incom',v.add_income,name='add'),
     path('inc_list',v.income_list,name='list1'),
     path('income_search',v.inc_search,name='income_search'),
+    path('ixt/<str:ixt2>',v.sortby_type,name="ixt1"),
 ]

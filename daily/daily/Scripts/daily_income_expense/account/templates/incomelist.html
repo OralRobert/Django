@@ -27,4 +27,28 @@
     </tr>
     {%endfor%}
 </table>
+<style>
+    .rside{
+        width: 200px;
+        height: 100%;
+        background-color: aqua;
+        position: fixed;
+        right: 0%;
+        top:0%;
+    }
+    h3{
+        margin: 10px;
+        padding: 10px;
+    }
+    .rside a{
+        text-decoration: none;
+    }
+</style>
+<div class="rside">
+    <h2>Sort by income_type</h2>
+    <h3><a href="{%url 'income:list1' %}">All</a></h3>
+    {%for i in inc%}
+    <h3><a href="{%url 'income:ixt1' i %}">{{i}}</a></h3>
+    {%endfor%}
+</div>
 {%endblock%}

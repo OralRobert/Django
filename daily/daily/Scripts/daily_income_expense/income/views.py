@@ -25,10 +25,17 @@ def add_income(request):
         return render(request,'income.html',context)
 
 def income_list(request):
-    uid=request.session.get('uid')
+    # uid=request.session.get('uid')
     # incl=Income.objects.all()
+    # incl=Income.objects.filter(user=uid)
+    # context={'incl':incl}
+    # return render(request,'incomelist.html',context)
+    uid=request.session.get('uid')
     incl=Income.objects.filter(user=uid)
-    context={'incl':incl}
+    inc=set()
+    for i in incl:
+        inc.add(i.income_type)
+    context={'incl':incl,'inc':inc}
     return render(request,'incomelist.html',context)
 
 def inc_search(request):
@@ -36,6 +43,16 @@ def inc_search(request):
     srch=request.POST.get('srch')
     incl=Income.objects.filter(user=uid,description__contains=srch)
     context={'incl':incl}
+    return render(request,'incomelist.html',context)
+
+def sortby_type(request,ixt2):
+    uid=request.session.get('uid')
+    incl=Income.objects.filter(user=uid)
+    inc=set()
+    for i in incl:
+        inc.add(i.income_type)
+        incl=Income.objects.filter(user=uid,income_type=ixt2)
+    context={'incl':incl,'inc':inc}
     return render(request,'incomelist.html',context)
 
 
