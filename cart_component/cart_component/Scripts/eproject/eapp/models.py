@@ -14,6 +14,7 @@ class Category(models.Model):
         return self.category_name
 
 class Product(models.Model):
+    img=models.ImageField(upload_to='image',default='')
     p_name=models.CharField(max_length=30)
     p_price=models.IntegerField()
     p_description=models.TextField(max_length=300)
@@ -21,6 +22,7 @@ class Product(models.Model):
 
     class Meta:
         db_table='product'
+
 
 class Cart(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
