@@ -25,4 +25,8 @@ urlpatterns = [
     path('login',v.login_view),
     path('logout',v.logout_view),
     path('hlist',v.homelist),
+    path('addtocart/<int:pid>',v.add_to_cart),
+    path('cartlist',v.cartlist),
+    path('delete1/<int:pk>',v.delete.as_view()),
+    path('houseapp',v.search,name='house_search'),
 ]

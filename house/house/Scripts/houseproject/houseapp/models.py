@@ -8,12 +8,13 @@ class Category(models.Model):
     description=models.TextField(max_length=300)
 
     class Meta:
-        db_table='category'
+        db_table='category' 
 
     def __str__(self):
         return self.category_name
 
 class Property(models.Model):
+    img=models.FileField(upload_to='videos/',default='')
     owner_name=models.CharField(max_length=30)
     price=models.IntegerField()
     bhk=models.CharField(max_length=30)
@@ -35,6 +36,9 @@ class Shortlist(models.Model):
     class Meta:
         db_table='shortlist'
     
+    def __str__(self):
+        return self.product.owner_name
+
 
 
 

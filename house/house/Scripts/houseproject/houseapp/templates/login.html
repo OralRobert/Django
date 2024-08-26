@@ -1,8 +1,24 @@
 {%include 'navbar.html'%}
-<h1>Login Form</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body{
+        background-image: radial-gradient(rgb(191, 191, 82),beige,beige);
+    }
+    form{
+        margin-left: 30%;
+        margin-top: 2%;
+    }
+</style>
+<body class="body">
 <form action="" method="post">
     {%csrf_token%}
-    <table class="table">
+    <table>
         <tr>
             <b>Username</b> : <input type="text" name="username">
 <br><br>
@@ -14,3 +30,6 @@
         </tr>
     </table>
 </form>
+<img class=img src="https://cdn.pixabay.com/photo/2021/10/07/15/23/real-estate-6688945_1280.jpg" width="100%" height="100%" class="img-fluid" alt="">
+</body>
+</html>

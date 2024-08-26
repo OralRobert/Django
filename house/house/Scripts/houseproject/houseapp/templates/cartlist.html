@@ -1,0 +1,28 @@
+{%include 'navbar.html'%}
+
+<h1>Cartlist</h1>
+<form action="{%url 'houseapp:house_search'%}" method="post">
+    {%csrf_token%}
+    <textarea name="srch" id="" rows="3" cols="60"></textarea>
+    <input type="submit" value="search">
+</form>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Owner name</th>
+        <th>Property Price</th>
+        <th>Bedroom</th>
+        <th>Username</th>
+        <th>Action</th>
+    </tr>
+    {%for i in cl%}
+    <tr>
+        <td>{{i.product.id}}</td>
+        <td>{{i.product.owner_name}}</td>
+        <td>{{i.product.price}}</td>
+        <td>{{i.product.bhk}}</td>
+        <td><video src="{{i.product.img}}" controls width="300px" hieght="50px"></video></td>
+        <td><a href="delete1/{{i.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>

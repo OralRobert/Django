@@ -1,0 +1,12 @@
+
+<h2>{{fmsg}}</h2>
+<h2>{{lmsg}}</h2>
+<h2>{{smsg}}</h2>
+<h2>{{emsg}}</h2>
+
+<form action="" method="post">
+    {%csrf_token%}
+    <input type="text" name="uname" placeholder="Please enter username"><br>
+    <input type="text" name="passw" placeholder="Please enter password">
+    <input type="submit" value="login">
+</form>

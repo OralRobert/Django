@@ -1,4 +1,6 @@
 {%include 'navbar.html'%}
+{%load static%}
+
 <h1>Cartlist</h1>
 <table class="table">
     <tr>
@@ -6,7 +8,7 @@
         <th>ID</th>
         <th>Product_name</th>
         <th>Product_price</th>
-        <th>Product_quantity</th.
+        <th>Product_quantity</th>
         <th>Username</th>
         <th>Sub-total</th>
         <th>Action</th>
@@ -17,15 +19,21 @@
         <td>{{i.product.id}}</td>
         <td>{{i.product.p_name}}</td>
         <td>{{i.product.p_price}}</td>
-        <td><input type="number" value="1" name="qty"></td>
+        <td><input type="number"  name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
         <td>{{i.user.username}}</td>
-        <td><span></span></td>
+        <td><input type="text" class="subtotal" value="{{i.product.p_price}}"></td>
         <td><a href="">Delete</a></td>
     </tr>
     {%endfor%}
     <tr>
         <td><input type="submit" value="place-order"></td>
-        <td>Total <Bill:span>50000</Bill:span></td>
+        <!-- <td>Total <Bill:span>50000</Bill:span></td> -->
     </tr>
 
 </table>
+
+<script src="{%static 'js/static.js'%}"></script>
+
+<h1 id="total">Final Total: Rs..<span id="total-value">0.00 /-</span></h1>
+<h1 id="gst">GST (18%): Rs. <span id="gst-value">0.00 /-</span></h1>
+<h1 id="invoice-total">Invoice Total: Rs. <span id="invoice-total-value">0.00 /-</span></h1>

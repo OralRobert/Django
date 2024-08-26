@@ -8,7 +8,7 @@ admin.site.register(Category,CategoryAdmin)
 
 class PropertyAdmin(admin.ModelAdmin):
     list_display=['id','owner_name','price','bhk','contact','address','category']
-admin.site.register(Property)
+admin.site.register(Property,PropertyAdmin)
 
 
 admin.site.register(Shortlist)

@@ -1,19 +1,30 @@
 {%load static%}
+<style>
+  .navbar{
+    background-color: #5d1d06;
+    width: 100%;
+    padding-left: 20%;
+   }
+</style>
 <link rel="stylesheet" href="{%static 'css/bmin.css'%}">
+<div class="navbar">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <h1><a class="navbar-brand"  href="#">Tenant</a></h1>
+      <h1><a class="navbar-brand"  href="#"><img src="data:image/png;base64,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" width="20%" height="20%" class="img-fluid" alt="">Tenant</a></h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
         {%if user.is_authenticated%}
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="logout">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Shortlisted</a>
+            <a class="nav-link active" aria-current="page" href="cartlist">Shortlisted</a>
           </li>
           {%else%}
           <li class="nav-item">
@@ -24,11 +35,9 @@
           </li>
           {%endif%}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="hlist">For Rent</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="hlist">Available for Rent</a>
-          </li>
+          
 
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -44,17 +53,19 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
+          </li> -->
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" role="search" action=" " method="post">
+          {%csrf_token%}
+          <input class="form-control me-2" name="srch" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success"  type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
+</div>
 
-  <script src="{%static 'js/bmin.js'%}"></script>
-  <script src="{%static 'js/p.js'%}"></script>
+  <!-- <script src="{%static 'js/bmin.js'%}"></script>
+  <script src="{%static 'js/p.js'%}"></script> -->

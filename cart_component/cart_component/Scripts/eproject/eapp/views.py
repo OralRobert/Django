@@ -56,7 +56,7 @@ def add_to_cart(request,pid):
 def cart_list(request):
     uid=request.session.get('uid')
     # user_id=User.objects.get(id=uid)
-    cl=Cart.objects.filter(user_id=uid)
+    cl=Cart.objects.filter(user=uid)
     context={'cl':cl}
     return render(request,'cartlist.html',context)
         
