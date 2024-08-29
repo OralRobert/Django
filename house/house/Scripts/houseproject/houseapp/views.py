@@ -39,8 +39,15 @@ def logout_view(request):
     return redirect('/')
 
 def homelist(request):
-    hl=Property.objects.all()
-    context={'hl':hl}
+    # hl=Property.objects.all()
+    # context={'hl':hl}
+    # return render(request,'property.html',context)
+    # uid=request.session.get('uid')
+    hl=Property.objects.filter()
+    inc=set()
+    for i in hl:
+        inc.add(i.city)
+    context={'hl':hl,'inc':inc}
     return render(request,'property.html',context)
 
 def add_to_cart(request,pid):
@@ -56,25 +63,28 @@ def add_to_cart(request,pid):
 def cartlist(request):
     uid=request.session.get('uid')
     # user_id=User.objects.get(id=uid)
-    cl=Shortlist.objects.filter(user_id=uid)
+    cl=Shortlist.objects.filter(user=uid)
     context={'cl':cl}
     return render(request,'cartlist.html',context)
-    # uid=request.session.get('uid')
-    # cl=Shortlist.objects.filter(user_id=uid)
-    # clc=set()
-    # for i in cl:
-    #     clc.add(i.product.owner_name)
-    # context={'cl':cl,'clc':clc}
-    # return render(request,'cartlist.html',context)
 
 def search(request):
-    uid=request.session.get('uid')
+    # uid=request.session.get('uid')
     srch=request.POST.get('srch')
-    hl=Shortlist.objects.filter(user=uid,product__owner_name__contains=srch)
+    hl=Property.objects.filter(owner_name__contains=srch)
     context={'hl':hl}
-    return render(request,'cartlist.html',context)
+    return render(request,'property.html',context)
 
 class delete(DeleteView):
     template_name='delete.html'
     model=Shortlist
     success_url= '/cartlist'
+
+def sortby_type(request,ixt2):
+    # uid=request.session.get('uid')
+    hl=Property.objects.filter()
+    inc=set()
+    for i in hl:
+        inc.add(i.city)
+        hl=Property.objects.filter(city=ixt2)
+    context={'hl':hl,'inc':inc}
+    return render(request,'property.html',context)

@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category,CategoryAdmin)
 
 class PropertyAdmin(admin.ModelAdmin):
-    list_display=['id','owner_name','price','bhk','contact','address','category']
+    list_display=['id','owner_name','price','bhk','contact','city','address','category']
 admin.site.register(Property,PropertyAdmin)
 
 

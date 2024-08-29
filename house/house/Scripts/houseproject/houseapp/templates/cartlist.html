@@ -1,11 +1,7 @@
 {%include 'navbar.html'%}
 
 <h1>Cartlist</h1>
-<form action="{%url 'houseapp:house_search'%}" method="post">
-    {%csrf_token%}
-    <textarea name="srch" id="" rows="3" cols="60"></textarea>
-    <input type="submit" value="search">
-</form>
+
 <table class="table">
     <tr>
         <th>ID</th>
@@ -13,6 +9,7 @@
         <th>Property Price</th>
         <th>Bedroom</th>
         <th>Username</th>
+        <th>Payment</th>
         <th>Action</th>
     </tr>
     {%for i in cl%}
@@ -22,6 +19,9 @@
         <td>{{i.product.price}}</td>
         <td>{{i.product.bhk}}</td>
         <td><video src="{{i.product.img}}" controls width="300px" hieght="50px"></video></td>
+        <form action="">
+        <td><button type="submit" style="width: 150px; height: 50px; font-size: 16px;" class="btn btn-success btn-block">Registration fees</button></td>
+    </form>
         <td><a href="delete1/{{i.id}}">Delete</a></td>
     </tr>
     {%endfor%}
