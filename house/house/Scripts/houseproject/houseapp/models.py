@@ -16,9 +16,9 @@ class Category(models.Model):
 class Property(models.Model):
     img=models.FileField(upload_to='videos/',default='')
     owner_name=models.CharField(max_length=30)
-    price=models.IntegerField()
+    price=models.CharField(max_length=40)
     bhk=models.CharField(max_length=30)
-    contact=models.IntegerField()
+    contact=models.CharField(max_length=15)
     city=models.CharField(max_length=30,default='unknown')
     address=models.TextField(max_length=300)
     category=models.ForeignKey(Category,on_delete=models.CASCADE)

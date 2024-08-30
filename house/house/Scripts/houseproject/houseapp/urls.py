@@ -30,4 +30,5 @@ urlpatterns = [
     path('delete1/<int:pk>',v.delete.as_view()),
     path('search_product',v.search),
     path('ixt/<path:ixt2>/',v.sortby_type,name='list2'),
+    # path('success',v.success_view),
 ]
